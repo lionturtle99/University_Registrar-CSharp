@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h2>Add new students to the registry</h2>
+
+<div class="margin">
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.EnrollmentDate)
+    @Html.TextBoxFor(model => model.EnrollmentDate, new { type="date" })
+    <input type="submit" value="Add new student"/>
+  }
+</div>

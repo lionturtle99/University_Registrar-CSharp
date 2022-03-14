@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@model UniversityRegistrar.Models.Student
+
+<h2>Edit Student: @Model.Name</h2>
+
+<div class="margin">
+  @using (Html.BeginForm())
+  {
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, new { placeholder="${Model.Name}" })
+
+    @Html.LabelFor(model => model.EnrollmentDate)
+    @Html.TextBoxFor(model => model.EnrollmentDate, new { type="date", placeholder="${Model.EnrollmentDate}" })
+    <input type="submit" value="Update Student"/>
+  }
+</div>
