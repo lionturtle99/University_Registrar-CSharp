@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using UniversityRegistrar.Models;
 using System.Linq;
+using System;
 
 
 namespace UniversityRegistrar.Controllers
@@ -24,13 +25,19 @@ namespace UniversityRegistrar.Controllers
     }
     public ActionResult Create()
     {
+      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "NameOfCourse");
       return View();
     }
     [HttpPost]
-    public ActionResult Create(Student student)
-    {
+    public ActionResult Create(Student student, int CourseId)
+    { 
       _db.Students.Add(student);
       _db.SaveChanges();
+      if (CourseId !=0)
+      {
+        _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId});
+        _db.SaveChanges();
+      }
       return RedirectToAction("Index");
     }
 
@@ -79,8 +86,8 @@ namespace UniversityRegistrar.Controllers
 
     public ActionResult AddCourse(int id)
     {
-      Student thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
-      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "Name");
+      var thisStudent = _db.Students.FirstOrDefault(student => student.StudentId == id);
+      ViewBag.CourseId = new SelectList(_db.Courses, "CourseId", "NameOfCourse");
       return View(thisStudent);
     }
 
@@ -89,7 +96,7 @@ namespace UniversityRegistrar.Controllers
     {
       if (CourseId != 0)
       {
-        _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId});
+        _db.CourseStudent.Add(new CourseStudent() { CourseId = CourseId, StudentId = student.StudentId });
         _db.SaveChanges();
       }
       return RedirectToAction("Index");
@@ -101,7 +108,7 @@ namespace UniversityRegistrar.Controllers
       CourseStudent joinEntry = _db.CourseStudent.FirstOrDefault(entry => entry.CourseStudentId == joinId);
       _db.CourseStudent.Remove(joinEntry);
       _db.SaveChanges();
-      return RedirectToAction();
+      return RedirectToAction("Index");
     }
   }
 }

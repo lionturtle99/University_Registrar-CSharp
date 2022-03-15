@@ -1,6 +1,6 @@
 <h1 align="center">University Registar</h1>
 
-#### By Liam Eller | [LinkedIn](https://www.linkedin.com/in/liamellerportland/) | [email](mailto:<liamthelastson@gmail.com>) | [website](https://lionturtle99.github.io/my-portfolio/), Mikah Mathews | [LinkedIn](https://www.linkedin.com/in/mikah-mathews/) | [email](mailto:mikah@outofband.org) | [website](https://github.com/mikah-mathews)
+#### By Liam Eller | [LinkedIn](https://www.linkedin.com/in/liamellerportland/) | [email](mailto:<liamthelastson@gmail.com>) | [website](https://lionturtle99.github.io/my-portfolio/), Mikah Mathews | [LinkedIn](https://www.linkedin.com/in/mikah-mathews/) | [email](mailto:mikah@outofband.org) | [website](https://github.com/mikah-mathews), Matt Eilar | [LinkedIn](https://www.linkedin.com/in/meilar-503/) | [email](mailto:meilar@gmail.com) | [website](https://github.com/meilar)
 
 #### __
 
@@ -33,7 +33,7 @@ __
     4. In the Default Schema to be Imported To section, click the "New..." button to create a new schema
     5. Hit the "Start Import" button at the bottom right of the page (enlarge the window if not seen). And then, confirm it worked in the Schemas tab by right clicking in the SCHEMAS drop down and choosing refresh all from the options
     
-5. Add a new file called appsettings.json in the project's production folder and store the following
+5. Add a new file called `appsettings.json` in the project's production folder and store the following
         `{
             "ConnectionStrings": {
                 "DefaultConnection": "Server=localhost;Port=3306;database=[NAME-OF-THE-DATABASE-YOU-CREATED-ABOVE];uid=root;pwd=[YOUR-PASSWORD-HERE];"

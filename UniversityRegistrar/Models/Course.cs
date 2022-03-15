@@ -13,6 +13,6 @@ namespace UniversityRegistrar.Models
     public DateTime Time { get; set; }
     public int CourseId { get; set; }
 
-    public virtual ICollection<CourseStudent> JoinEntities { get; }
+    public virtual ICollection<CourseStudent> JoinEntities { get; set; }
   }
 }

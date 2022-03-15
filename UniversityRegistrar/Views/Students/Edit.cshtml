@@ -9,6 +9,7 @@
 <div class="margin">
   @using (Html.BeginForm())
   {
+    @Html.Hidden("StudentId", Model.StudentId)
     @Html.LabelFor(model => model.Name)
     @Html.TextBoxFor(model => model.Name, new { placeholder="${Model.Name}" })
 

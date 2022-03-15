@@ -6,16 +6,23 @@
 
 <h2>Edit</h2>
 
-<h4>Edit this Course: @Html.DisplayFor(model => model.NameOfCourse)</h4>
 
-@using (Html.BeginForm())
-{
-  @Html.HiddenFor(model => model.CourseId)
 
-  @Html.LabelFor(model => model.Time)
-  @Html.EditorFor(model => model.Time, new { type="date" })
+<div class="margin">
+  <h4>Edit this Course: @Html.DisplayFor(model => model.NameOfCourse)</h4>
+  @using (Html.BeginForm())
+  {
+    @Html.HiddenFor(model => model.CourseId)
 
-  <input type="submit" value="Save" />
-}
+    @Html.LabelFor(model => model.NameOfCourse)
+    @Html.EditorFor(model => model.NameOfCourse)
+
+    @Html.LabelFor(model => model.Time)
+    @Html.EditorFor(model => model.Time, new { type="date" })
+
+    <input type="submit" value="Save" />
+  }
+</div>
+
 
 <p>@Html.ActionLink("Back to list", "Index")</p>

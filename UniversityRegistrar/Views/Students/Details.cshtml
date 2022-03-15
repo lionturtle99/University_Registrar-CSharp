@@ -22,7 +22,7 @@
       {
         <li>@join.Course.NameOfCourse</li>
         <li>@join.Course.Time</li>
-        @using (Html.BeginForm("DeleteCourse", "Courses"))
+        @using (Html.BeginForm("DeleteCourse", "Students"))
         {
           @Html.Hidden("joinId", @join.CourseStudentId)
           <input type="submit" value="Delete"/>
@@ -35,4 +35,5 @@
 <div class="margin">
   <p>@Html.ActionLink("Edit Student details", "Edit", new { id = Model.StudentId })</p>
   <p>@Html.ActionLink("Remove student from registry", "Delete", new { id = Model.StudentId })</p>
+  <p>@Html.ActionLink("Add a Course", "AddCourse", new { id = Model.StudentId })</p>
 </div>
