@@ -2,26 +2,30 @@
   Layout = "_Layout";
 }
 
-@model UnivesityRegistrar.Models.Course;
+@model UniversityRegistrar.Models.Course;
 
 <h2>Course Details</h2>
 <hr />
 <h3>@Html.DisplayNameFor(model => model.NameOfCourse): @Html.DisplayFor(model => model.NameOfCourse)</h3>
 
-@if(@Model.JoinEntities.Count == 0)
-{
-  <p>No students are enrolled in this class</p>
-}
-else
-{
-  <h4>The following student are enrolled in this course</h4>
-  <ul>
-  @foreach(var join in Model.JoinEntities)
+<div class="margin">
+  @if(@Model.JoinEntities.Count == 0)
   {
-    <li>@join.Student.Name</li>
+    <p>No students are enrolled in this class</p>
   }
-  </ul>
-}
+  else
+  {
+    <h4>The following student are enrolled in this course</h4>
+    <ul>
+    @foreach(var join in Model.JoinEntities)
+    {
+      <li>@join.Student.Name</li>
+    }
+    </ul>
+  }
+</div>
 
-<p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
-<p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
+<div class="margin">
+  <p>@Html.ActionLink("Edit Course", "Edit", new { id = Model.CourseId })</p>
+  <p>@Html.ActionLink("Delete Course", "Delete", new { id = Model.CourseId })</p>
+</div>

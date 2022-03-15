@@ -11,6 +11,7 @@
 * Markdown
 * CSS
 * Razor
+* LINQ
 * Entity
 * ASP .NET Core
 * ASP .NET Core MVC
