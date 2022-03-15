@@ -1,6 +1,6 @@
 <h1 align="center">University Registar</h1>
 
-#### By Liam Eller | [LinkedIn](https://www.linkedin.com/in/liamellerportland/) | [email](mailto:<liamthelastson@gmail.com>) | [website](https://lionturtle99.github.io/my-portfolio/)
+#### By Liam Eller | [LinkedIn](https://www.linkedin.com/in/liamellerportland/) | [email](mailto:<liamthelastson@gmail.com>) | [website](https://lionturtle99.github.io/my-portfolio/), Mikah Mathews | [LinkedIn](https://www.linkedin.com/in/mikah-mathews/) | [email](mailto:mikah@outofband.org) | [website](https://github.com/mikah-mathews)
 
 #### __
 
