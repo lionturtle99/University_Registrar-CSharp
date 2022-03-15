@@ -20,8 +20,8 @@ namespace UniversityRegistrar.Controllers
 
     public ActionResult Index()
     {
-      List<Student> model = _db.Students.ToList();
-      return View(model);
+      List<Student> query = _db.Students.OrderBy(student => student.Name).ToList();
+      return View(query);
     }
     public ActionResult Create()
     {
